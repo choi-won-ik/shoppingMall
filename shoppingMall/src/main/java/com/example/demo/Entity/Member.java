@@ -32,13 +32,13 @@ public class Member {
 	@Column(nullable = false)
 	private String pw;
 
-//	@Column(nullable = false, length = 10)
+	@Column(nullable = false, length = 10)
 	private String name;
 
-//	@Column(nullable = false, length = 11)
+	@Column(nullable = false, length = 11)
 	private long phone;
 
-//	@Column(nullable = false, length = 6)
+	@Column(nullable = false, length = 6)
 	private long birthday;
 
 	private String introduction;
