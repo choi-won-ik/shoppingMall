@@ -1,0 +1,164 @@
+html,
+body {
+	overflow-X: hidden;
+}
+
+.first-menu {
+	float: right;
+	margin-right: 25px;
+	width: 100%;
+}
+
+.myMarket {
+	border: none;
+	background-color: transparent;
+	margin-top: 10px;
+	color: #b9b9b9;
+	float: right;
+	margin-right: 20px;
+}
+
+.login.menu button {
+	border: none;
+	background-color: transparent;
+	margin-top: 10px;
+	color: #b9b9b9;
+	float: right;
+}
+
+.marketIcon {
+	width: 50px;
+	height: 50px;
+	margin-left: 5%;
+}
+
+.form-control.me-2 {
+	width: 55%;
+}
+
+.container {
+	overflow: hidden;
+}
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+	height: 110px;
+	width: 100%;
+	margin-top: 55px;
+}
+
+.container-fluid .collapse.navbar-collapse {
+	float: right;
+}
+
+.collapse.navbar-collapse.short ul {
+	display: none;
+}
+
+.collapse.navbar-collapse.short form {
+	margin-left: 70%;
+}
+
+.collapse.navbar-collapse.short.out input {
+	position: absolute;
+	margin-left: 50%;
+}
+
+.container-fluid .collapse.navbar-collapse .navbar-nav.me-auto.mb-2.mb-lg-0 {
+	float: right;
+	margin-left: auto;
+	margin-right: 10px !important;
+}
+
+.container-fluid .collapse.navbar-collapse .navbar-nav.me-auto.mb-2.mb-lg-0 li {
+	width: 100px;
+	text-align: center;
+}
+
+
+.login.menu {
+	position: relative;
+}
+
+
+
+.login.menu a {
+	text-decoration: none;
+	/* 밑줄 제거 */
+}
+
+.username {
+	margin-right: auto;
+	position: absolute;
+	margin: 10px 0px 0px 10px;
+	display: flex;
+	margin-left: 10px;
+}
+
+.username img {
+	width: 26px;
+	height: 26px;
+}
+
+.username h5 {
+	margin-left: 10px;
+}
+
+.username div {
+	margin-left: 15px;
+}
+
+.dropdown-body {
+	padding-left: 0;
+	width: 300px;
+	width: 100%;
+	min-height: 0px;
+	max-height: 400px;
+
+	background-color: rgb(242, 242, 242);
+	position: absolute;
+	overflow-y: auto;
+	display: none;
+}
+
+.dropdown-body.show {
+	display: block;
+	z-index: 1;
+}
+
+.dropdown-body .dropdown-op {
+	cursor: default;
+	list-style-type: none;
+	width: 100%;
+	height: 80px;
+	transition: background-color 0.3s ease;
+	padding-left: 20px;
+}
+
+.dropdown-body .dropdown-op:hover{
+	background-color: rgb(176, 176, 176);
+}
+
+.dropdown-body .dropdown-op a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+}
+
+.dropdown-body .dropdown-op div {
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+.search-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+@media (min-width: 992px) {
+	.search-box {}
+}

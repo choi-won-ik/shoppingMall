@@ -1,0 +1,44 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	runtimeOnly 'com.h2database:h2'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+	implementation 'commons-fileupload:commons-fileupload:1.4'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'org.webjars.bower:lodash:4.17.21'
+	testImplementation 'junit:junit:4.13.2'
+}
+
+compileJava {
+    options.compilerArgs << "-parameters"
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

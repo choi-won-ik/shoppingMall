@@ -1,0 +1,571 @@
+.hidden {
+	display: none;
+}
+
+.more {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	display: none;
+}
+
+.more.show {
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.more-body {
+	padding: 0px;
+	width: 400px;
+	height: 450px;
+	background-color: white;
+	border-radius: 5px;
+	overflow-y: scroll;
+}
+
+.more-follow {
+	width: 100%;
+	height: 100%;
+}
+
+.more-follow .more-follower-title,
+.more-follow .more-following-title {
+	border-radius: 5px 5px 0px 0px;
+	width: 100%;
+	height: 15%;
+	background-color: rgb(141, 158, 255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.more-follow .more-follower-title.show,
+.more-follow .more-following-title.show {
+	display: flex;
+}
+
+.more-follow .more-follower-title h5,
+.more-follow .more-following-title h5 {
+	color: white;
+	margin: 0px;
+}
+
+.item-user {
+	display: flex;
+	width: 100%;
+	border-bottom: 0.5px solid rgb(197, 197, 197);
+	height: 17%;
+	padding: 5px 20px;
+	align-items: center;
+	position: relative;
+}
+
+.item-users {
+	height: 85%;
+}
+
+.item-users .item-user {
+	background-color: white;
+	transition: background-color 0.3s ease;
+	color: inherit;
+	text-decoration: none;
+}
+
+.item-user:hover {
+	background-color: rgb(192, 192, 192);
+}
+
+.item-user img {
+	height: 100%;
+	object-fit: cover;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+
+}
+
+.item-user div {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-left: 10px;
+}
+
+.item-user div h5 {
+	margin: 0px;
+}
+
+.my-market {
+	height: 330px;
+	width: 100%;
+	display: grid;
+	display: flex;
+}
+
+.myImg {
+	width: 330px;
+	height: 100%;
+	position: relative;
+}
+
+.op {
+	position: absolute;
+	background-color: rgba(173, 173, 173, 0.5);
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.op.show {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+.file-input {
+	display: none;
+}
+
+.file-input-label {
+	width: 70px;
+	height: 70px;
+	background-image: url('/img/이미지\ 수정.png');
+	cursor: pointer;
+	background-size: cover;
+	/* 요소를 완전히 덮도록 크기 조정 */
+	background-size: contain;
+	/* 요소를 포함하도록 크기 조정 */
+
+}
+
+.myProfile {
+	height: 100%;
+}
+
+/*.myImg > *:not(:first-child) {
+	display: none;
+}*/
+
+.myImg img {
+	width: 100%;
+	height: 100%;
+}
+
+.information {
+	width: 100%;
+}
+
+.information hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: rgb(218, 218, 218);
+}
+
+.information .first {
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+}
+
+.information .first form {
+	margin-right: 20px;
+	width: 100px;
+	margin-left: auto;
+	align-items: center;
+	height: 40px;
+}
+
+.information .first form button {
+	width: 100%;
+}
+
+.information .first .name {
+	display: block;
+}
+
+.information .second {
+	display: flex;
+	align-items: center;
+}
+
+.information .second img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.information .second div {
+	display: flex;
+	margin-left: 30px;
+}
+
+.information .second div label {
+	margin-left: 10px;
+}
+
+.information .third {
+	margin-top: 30px;
+	margin-left: 30px;
+	height: 205px;
+	position: relative;
+}
+
+.information .third .btn.btn-light {
+	position: absolute;
+	bottom: 0;
+	display: block;
+}
+
+.information .third .btn.btn-light.hidden {
+	display: none;
+}
+
+.information .third .content {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.information .third .input-group.mb-3 {
+	height: 100%;
+	width: 100%;
+}
+
+.information .third .input-group.mb-3.hidden {
+	display: none;
+}
+
+.information .third .input-group.mb-3 button {
+	width: 150px;
+	justify-content: center;
+}
+
+.item {
+	width: 25%;
+	text-align: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-color: rgb(243, 243, 243);
+	height: 50px;
+	border: 0.1px solid #ededed;
+	border-bottom: 0.1px solid black;
+	 cursor: pointer;
+}
+
+.item.active {
+	background-color: white;
+	border: 0.1px solid black;
+	border-bottom: 1px solid white;
+}
+
+.description {
+	position: relative;
+	margin-left: 35px;
+	margin-top: 70px;
+}
+
+.item-option {
+	display: none;
+	width: 100%;
+}
+
+.item-option.add {
+	display: block;
+}
+
+.item-option .all-following {
+	width: 100%;
+}
+
+.item-option .description-first span {
+	display: flex;
+	width: 100%;
+}
+
+.item-option .description-first span div:first-of-type {
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+.product {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.productItem {
+	width: 20%;
+	height: 350px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.productItem img {
+	width: 100%;
+	height: 60%;
+}
+
+.productItem>div:first-of-type {
+	display: flex;
+}
+
+.productItem>div:first-of-type div {
+	margin-left: auto;
+	color: rgb(167, 167, 167);
+}
+
+.productItem>div:nth-of-type(2) {
+	color: rgb(167, 167, 167);
+}
+
+.last-line {
+	margin-left: 80px;
+}
+
+.last-line button {
+	border: 0.5px solid rgb(176, 176, 176);
+}
+
+.description-third h4:nth-of-type(2) {
+	color: rgb(244, 102, 20);
+	display: flex;
+	margin-left: 10px;
+}
+
+.description-third span {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.follow-profile {
+	width: 33%;
+	height: 270px;
+	display: grid;
+	place-items: center;
+	margin-bottom: 50px;
+}
+
+.follow-profile a {
+	width: 200px;
+	height: 200px;
+}
+
+.follow-profile a img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.secound-line {
+	display: flex;
+}
+
+.secound-line p {
+	margin-bottom: 0px;
+}
+
+.secound-line>p:nth-of-type(2) {
+	margin-left: 10px;
+	color: rgb(200, 200, 200);
+}
+
+.followBTN {
+	display: flex;
+	border: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.followBTN img {
+	width: 20px;
+	height: 20px;
+}
+
+.third .btn.btn-light {
+	margin-top: auto;
+}
+
+.item-list {
+	margin-top: 50px;
+	background-color: white;
+	display: flex;
+}
+
+.description-first h4 {
+	display: flex;
+	align-items: center;
+}
+
+.description-first h4:nth-of-type(2) {
+	color: rgb(244, 102, 20);
+	margin-left: 10px;
+}
+
+.description-first hr {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.productSort {
+	margin-left: auto;
+}
+
+.my-product-vowel {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.my-product-vowel .all-number {
+	color: rgb(167, 167, 167);
+	margin-left: 20px;
+}
+
+.product .productItem {
+	text-decoration: none;
+	color: inherit;
+}
+
+.item-option .description-secound .customer-profile div:first-of-type {
+	display: flex;
+}
+
+.description-second h4:nth-of-type(2) {
+	color: rgb(244, 102, 20);
+	margin-left: 10px;
+	display: flex;
+}
+
+.likey-subtitle {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.likey {
+	display: flex;
+}
+
+.likey button {
+	border: none;
+	margin-left: auto;
+	width: 25px;
+	padding: 0px;
+	background-color: white;
+}
+
+.likey button .likey.icon.plus {
+	fill: #ff6b81;
+}
+
+.likey button .likey.icon {
+	fill: #eee;
+}
+
+.item-option .description-third .follow-subtitle {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.description-fourth h4:nth-of-type(2) {
+	color: rgb(244, 102, 20);
+	margin-left: 10px;
+	display: flex;
+}
+
+.description-fourth #following-menu form {
+	display: flex;
+}
+
+.description-fourth .user {
+	display: flex;
+}
+
+.following-user {
+	width: 20%;
+	height: 230px;
+	display: grid;
+	place-items: center;
+	border-right: 0.5px solid rgb(169, 169, 169);
+	margin-right: 20px;
+}
+
+.following-user a {
+	color: inherit;
+	text-decoration: none;
+	width: 80px;
+	height: 80px;
+}
+
+.following-profile-img {
+	height: 100%;
+	width: 100%;
+}
+
+.following-profile-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.following-user .following-BTN {
+	border: none;
+}
+
+.following-user .following-BTN a {
+	text-decoration: none;
+	/* 밑줄 제거 */
+	color: black;
+}
+
+.following-user-btn {
+	display: flex;
+}
+
+.following-user-btn .etc {
+	display: flex;
+	width: 80px;
+	justify-content: center;
+}
+
+.following-user-btn .etc:first-of-type {
+	border-right: 1px solid black;
+}
+
+.user .user-product {
+	width: 18%;
+	height: 230px;
+	margin-right: 20px;
+}
+
+.following-product-ex {
+
+	width: 100%;
+	height: 100%;
+}
+
+.following-product-ex img {
+	width: 100%;
+	height: 100%;
+}
+
+.item-option hr {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.item-option .description-fourth .following-subtitle {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.hid {
+	display: none;
+}

@@ -1,0 +1,96 @@
+.hidden{
+	display: none;
+}
+
+.title {
+	width: 88px;
+	height: 30px;
+	margin: 100px auto 0px;
+	background-size: 100px 80px;
+	font-size: 23px;
+	line-height: 27px;
+	text-align: center;
+}
+
+main {
+	width: 580px;
+	height: 570px;
+	margin: 40px auto 42px;
+	padding: 0 69px;
+	border: 1px solid #d0d0d0;
+	font-size: 12px;
+	border: box;
+}
+
+main .box {
+	height: 100%;
+	padding: 110px 0 50px;
+	box-sizing: border-box;
+}
+
+main .box .form-floating.mb-3 label {
+	font-size: 15px;
+}
+
+.box .btn.btn {
+	width: 100%;
+	height: 50px;
+	margin-top: 60px;
+	background-color: #16ef72;
+}
+
+.box .other-BTN {
+	display: grid;
+	grid-template-columns: auto auto;
+	margin-top: 30px;
+}
+
+.box .other-BTN button {
+	background-color: white;
+	border: none;
+	width: 90px;
+	font-size: 18px;
+	color: rgb(95, 95, 95);
+	margin-right: auto;
+}
+
+.box .other-BTN div {
+	display: flex;
+	margin-left: auto;
+}
+
+.box .other-BTN div button {
+	width: 130px !important;
+}
+
+
+
+.form-check {
+	align-items: center;
+	display: flex !important;
+}
+
+.form-check-input {
+	width: 20px;
+	height: 20px;
+}
+
+.form-check input {
+	margin-top: 0px;
+}
+
+.form-check label {
+	margin-left: 5px;
+	font-size: 13px;
+}
+
+.message {
+	color: red;
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+}

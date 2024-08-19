@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>쇼핑몰</title>
+    <!-- 각 페이지의 script가 작성될 위치 -->
+    <th:block layout:fragment="script"></th:block>
+    <!-- 각 페이지의 css가 작성될 위치 -->
+    <th:block layout:fragment="css"></th:block>
+</head>
+<body>
+	<header th:replace="~{layout/header::header}"></header>
+	<!--<header th:replace="layout/header::header"></header>-->
+
+	<main layout:fragment="content"></main>
+
+	<header th:replace="~{layout/footer::footer}"></header>
+	<!--<footer th:replace="layout/footer::footer"></footer>-->
+</body>
+</html>

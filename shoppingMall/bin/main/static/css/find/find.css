@@ -1,0 +1,147 @@
+.find-option{
+    margin-top: 190px; width:100%;
+}
+
+.find-title{
+    border-bottom: 1px solid black;
+    padding-bottom: 50px;
+}
+
+.user-find-btn{
+   width: 100%;
+   padding: 30px 0px;
+}
+
+.user-find-btn label{
+    height: 200px; border: 0.5px solid #d0d0d0; width: 100%; margin: 0px!important;
+}
+
+.user-find-btn label div:first-child{
+    border-bottom: 0.5px solid #d0d0d0; height: 60%; display: flex; justify-content: center; align-items: center;
+}
+
+.find-option div:nth-of-type(2){
+    margin: 30px 0px;
+}
+
+.btn-vowel{
+    display: grid; grid-template-columns:auto auto; height:40%
+}
+
+.btn-vowel button{
+    width: 100%; height: 100%; border-radius: 0px;
+}
+
+.btn-vowel button:nth-last-of-type(2){
+    border-right: 0.5px solid #d0d0d0;
+}
+
+.besides{
+    margin: 100px 0px;  width: 100%; height: 150px;
+}
+
+.besides-vowel{
+    background-color: #f8f9fa; height: 100%; display: flex;justify-content: center; align-items: center;
+    position: relative;
+}
+
+.besides-vowel button{
+    height: 70px;
+    width: 200px;
+}
+
+.besides-vowel button:first-of-type{
+    margin-right: 3%;
+}
+
+.besides-vowel button:nth-of-type(2){
+    margin-left: 3%;
+}
+
+.besides-vowel div{
+    text-align: cetner; position: absolute; bottom: 0;
+}
+
+.find-id-title{
+    margin-bottom: 50px;
+}
+
+.id-find-box{
+    height: 600px; border: 1px solid black; align-items: center; position: relative;
+}
+
+.id-find-precautions{
+    padding-top: 100px;
+    margin: 0px 15%;
+    margin-bottom: 30px;
+}
+
+.id-find-content span:first-of-type{
+    border-top: 0.5px solid #d0d0d0;
+}
+
+.id-find-content span{
+    display: flex; height: 70px; border-bottom: 0.5px solid #d0d0d0; display: flex; 
+    margin: 0px 15%;
+}
+
+.id-find-content span div:first-of-type{
+    width: 20%; border-right: 0.5px solid #d0d0d0;
+    background-color: #f8f9fa;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.form-floating.mb-3{
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+
+}
+
+.id-find-content .form-control{
+    margin-left: 10px;
+    width: 400px !important;
+}
+
+.pw-find-content .form-control{
+    margin-left: 10px;
+    width: 400px !important;
+}
+
+.form-floating.mb-3 label{
+    display: flex ; 
+    align-items: center ; 
+    margin-left: 10px ;
+}
+
+.id-find-box{
+    height: 700px;
+}
+
+.form-floating.mb-3 .btn.btn-secondary{
+    margin-left: 20px; height: 80%;
+}
+
+
+.id-find-box .btn.btn-success{
+    margin-top: 80px; height: 60px; width: 150px; position: absolute; left: 50%; transform: translate(-50%, 0);
+}
+
+.pw-find-content span:first-of-type{
+    border-top: 0.5px solid #d0d0d0;
+}
+
+.pw-find-content span{
+    display: flex; height: 70px; border-bottom: 0.5px solid #d0d0d0; display: flex; 
+    margin: 0px 15%;
+}
+
+.pw-find-content span div:first-of-type{
+    width: 20%; border-right: 0.5px solid #d0d0d0;
+    background-color: #f8f9fa;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

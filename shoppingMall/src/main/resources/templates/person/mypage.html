@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/person/myPage.css}">
+	<link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css}">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<script th:inline="javascript"
+		th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js}"></script>
+	<script th:inline="javascript">
+//		const token = $("meta[name='_csrf']").attr("content");
+//		const header = $("meta[name='_csrf_header']").attr("content");
+		let userID = /*[[${userID}]]*/ "";
+		let meID = /*[[${meID}]]*/ "";
+		let productList = /*[[${productList}]]*/ [];
+		let followers = /*[[${followers}]]*/ [];
+		let followings = /*[[${followings}]]*/[];
+		let likeyList = /*[[${likeyList}]]*/[];
+		let loginID = "";
+	</script>
+	<script th:inline="javascript" th:src="@{/js/person/mypage.js}"></script>
+	<script th:inline="javascript" th:src="@{/js/person/moreFunc.js}"></script>
+	<script th:inline="javascript" th:src="@{/js/person/bottomMenu.js}" defer></script>
+</th:block>
+
+<main layout:fragment="content">
+	<meta name="_csrf" th:content="${_csrf.token}" />
+		<meta name="csrf-token" content="${_csrf.token}">
+		<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+		<input type="hidden" id="csrf-token" th:value="${_csrf.token}">
+		<input type="hidden" id="csrf-parameter-name" th:value="${_csrf.parameterName}">
+	
+	
+	<div class="more" id="more">
+		<div class="more-body" id="more-body">
+			<div class="more-follow" id="more-follow">
+				<div id="more-follower-title" class="more-follower-title">
+					<h5>팔 로 우</h5>
+				</div>
+				<div id="more-following-title" class="more-following-title">
+					<h5>팔 로 잉</h5>
+				</div>
+				<div class="item-users" id="item-users"></div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<main class="container">
+		<div style="margin-top: 20px;">
+			<div class="my-market">
+				<div class="myImg" id="myImg">
+					<div id="op" class="op">
+						<input type="file" id="fileInput" class="file-input" accept="image/*"
+							onchange="previewImage(event)">
+						<label for="fileInput" class="file-input-label"></label>
+					</div>
+					<div class="myProfile" id="myProfile" th:utext="${profile}">
+
+					</div>
+				</div>
+
+
+				<div class="information">
+					<div class="first">
+						<div th:text="${owner}">상점 주인</div>
+					</div>
+
+					<hr>
+
+					<div class="second">
+						<div>
+							<img src="/img/마켓.png" alt="">상점오픈일
+							<label th:text="${time}"></label>
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="third">
+						<div class="content" id="content" th:text="${introductionFind}"></div>
+						<button class="btn btn-light" id="contentEdit">소개글 수정</button>
+						<div id="editInput" class="input-group mb-3 hidden">
+							<input id="contentEditInput" type="text" class="form-control" placeholder="">
+							<button type="button" class="input-group-text" id="editSucces">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ul id="item" class="item-list">
+			<li class="item active">
+				<label>상품</label>
+			</li>
+			<li class="item">
+				<label>찜</label>
+			</li>
+			<li class="item">
+				<label>팔로우</label>
+			</li>
+			<li class="item">
+				<label>팔로잉</label>
+			</li>
+		</ul>
+
+		<div class="description" id="description">
+			<label class="item-option add">
+				<div class="description-first">
+					<span>
+						<h4>상품</h4>
+						<h4 th:txet="${productNUM}"></h4>
+
+					</span>
+
+					<hr>
+
+					<div class="my-product-vowel">
+						<strong>전체</strong>
+						<div class="all-number" th:text="|${productNUM} 개|"></div>
+
+					</div>
+
+					<div class="product" id="product"></div>
+				</div>
+			</label>
+
+
+
+			<label class="item-option">
+				<div class="description-second">
+					<div class="likey-subtitle">
+						<h4>찜</h4>
+						<h4 th:text="|(${likeyListNUM})|"></h4>
+					</div>
+
+					<div class="product" id="likey-products"></div>
+				</div>
+			</label>
+			
+			
+
+			<label class="item-option">
+				<div class="description-third">
+					<div class="follow-subtitle">
+						<h4>팔로우</h4>
+						<h4 th:text="|(${followerNUM})|"></h4>
+						<button class="hidden"></button>
+						<button class="btn btn-light" style="position: absolute; right: 0;" onclick="followerBTN()">더보기</button>
+					</div>
+
+					<span id="all-follower"></span>
+					
+				</div>
+			</label>
+
+			<label class="item-option">
+				<div class="description-fourth">
+					<div class="following-subtitle">
+						<h4>팔로잉</h4>
+						<h4 th:text="|(${followingNUM})|"></h4>
+						<button class="hidden"></button>
+						<button class="btn btn-light" style="position: absolute; right: 0;" onclick="followingBTN()">더보기</button>
+					</div>
+					
+					<label class="all-following" id="all-following"></label>
+					
+					<hr>
+
+				</div>
+			</label>
+
+
+
+		</div>
+	</main>
+</main>
+
+</html>
