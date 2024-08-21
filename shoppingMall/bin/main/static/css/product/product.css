@@ -491,12 +491,12 @@ body.noscroll {
 	flex-wrap: wrap;
 	grid-template-columns: auto auto;
 	margin: 0px 30px;
-	gap: 5%;
+	gap: 1%;
 }
 
 .product-seller-profile .product-seller-otherProduct {
 	position: relative;
-	width: 50%;
+	width: 49%;
 	height: 200px;
 }
 

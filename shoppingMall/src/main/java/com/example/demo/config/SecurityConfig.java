@@ -39,7 +39,6 @@ public class SecurityConfig {
 		return http.csrf(csrf -> csrf.csrfTokenRequestHandler(requestHandler)
 				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).ignoringRequestMatchers("/header"))
 				.authorizeHttpRequests(request -> request
-//						.requestMatchers("/login/login","/find/**").denyAll()
 						.requestMatchers("/follow","product/productADD","/kakaoPay","/likey").authenticated()
 						.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 						.requestMatchers("join/**").permitAll()
@@ -49,7 +48,6 @@ public class SecurityConfig {
 						.loginProcessingUrl("/login/login")
 						.usernameParameter("userid")
 						.passwordParameter("pw")
-//						.defaultSuccessUrl("/index", true)
 						.successHandler(new LoginSuccessHandler())
 						.failureHandler(new LoginFailHandler())
 						.permitAll()

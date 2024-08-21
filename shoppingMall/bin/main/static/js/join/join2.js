@@ -11,6 +11,7 @@ let $pw = document.getElementById('pw');
 // 정규 표현식을 사용하여 비밀번호 패턴 체크
 const pwPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
 let $check = document.getElementById('pw-check');
+let $name = document.getElementById('name');
 let $phone = document.getElementById('phone');
 let $birthday = document.getElementById('birthday');
 
@@ -19,9 +20,9 @@ $overlapBTN.addEventListener('click', () => {
 	if ($userid.value === "") {
 		alert("아이디를 입력하여 주세요.");
 	}
-	/*else if (!idPattern.test($userid.value)) {
+	else if (!idPattern.test($userid.value)) {
 		alert("대,소문자 구분없이 숫자를 조합하여 6자 이상 15자 이하인 아이디만을 허용합니다.");
-	}*/ else {
+	} else {
 		$.ajax({
 			type: 'post',
 			dataType: 'json',
