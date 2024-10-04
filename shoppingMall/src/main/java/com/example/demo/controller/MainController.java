@@ -39,8 +39,23 @@ public class MainController {
 	private static String me ="";
 	
 	@GetMapping("/index")
-	public String main(Model model) {
+	public String main(Model model,HttpServletRequest request) {
 		List<MainProduct> list = productService.allProduct();
+		
+		String xForwardedForHeader = request.getHeader("X-Forwarded-For");
+		String clientIp = null;
+
+        if (xForwardedForHeader != null && !xForwardedForHeader.isEmpty()) {
+            String[] ips = xForwardedForHeader.split(",");
+            clientIp = ips[0].trim();
+        } else {
+            clientIp = request.getRemoteAddr();
+        }
+		System.out.println("==============================");
+		System.out.println("==============================");
+		System.out.println(clientIp);
+		System.out.println("==============================");
+		System.out.println("==============================");
 		
 		model.addAttribute("products",list);
 		

@@ -19,13 +19,7 @@ $(document).ready(() => {
 	}
 
 
-	// 좋아요 버튼
-	const $likeyBTN = document.getElementById('likey-BTN');
-	const $heart = document.getElementById('heart');
 
-	$likeyBTN.addEventListener('click', (e) => {
-		$heart.classList.toggle('plus');
-	});
 
 	// 소개글 추가 버튼
 	const $contentEdit = document.getElementById('contentEdit');
@@ -131,3 +125,11 @@ function previewImage(event) {
 
 	xhr.send(formData);
 }
+
+// 좋아요 버튼
+const $likeyBTN = document.getElementById('likey-BTN');
+const $heart = document.getElementById('heart');
+
+$likeyBTN.addEventListener('click', (e) => {
+	$heart.classList.toggle('plus');
+});

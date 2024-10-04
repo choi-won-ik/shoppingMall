@@ -36,8 +36,14 @@ public class JoinController {
 	// 아이디 중복 확인
 	@PostMapping("/overlap")
 	@ResponseBody
-	public Optional<Member> overlap(@RequestParam("userid") String userid) {
-		return memberService.overlap(userid);
+	public boolean overlap(@RequestParam("userid") String userid) {
+		boolean result = false;
+		if(memberService.overlap(userid).isEmpty()) {
+			System.out.println("없음");
+		}else {
+			result = true;
+		}
+		return result;
 	}
 	
 	@GetMapping("/joinPage3")

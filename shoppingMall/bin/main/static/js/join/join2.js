@@ -9,12 +9,18 @@ let $overlap = false;
 const $overlapBTN = document.getElementById('overlapBTN');
 let $pw = document.getElementById('pw');
 // 정규 표현식을 사용하여 비밀번호 패턴 체크
-const pwPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+const pwPattern = /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[a-z\d@$!%*?&]{8,20}$/;
 let $check = document.getElementById('pw-check');
 let $name = document.getElementById('name');
 let $phone = document.getElementById('phone');
 let $birthday = document.getElementById('birthday');
+// 회원가입 취소
+const $cancel = document.getElementById('join-cancel');
 
+$cancel.addEventListener('click',()=>{
+	alert('회원가입이 취소되었습니다. 홈으로 이동합니다.');
+	window.location.href = "http://localhost:8080/index";
+});
 
 $overlapBTN.addEventListener('click', () => {
 	if ($userid.value === "") {
@@ -34,11 +40,11 @@ $overlapBTN.addEventListener('click', () => {
 				xhr.setRequestHeader(header, token);
 			},
 			success: (result) => {
-				if (result === null) {
+				$overlap = result;
+				if (result === false) {
 					alert("사용할 수 있는 아이디 입니다.");
 				} else {
 					alert("중복된 아이디 입니다.");
-					$overlap = true;
 				}
 			}, error: () => {
 				alert("알 수 없는 에러. 다시 시도해 주세요.");
@@ -55,7 +61,7 @@ $joinBTN.addEventListener('click', (e) => {
 
 	console.log($overlap);
 	// 중복확인
-	if ($overlap === false) {
+	if ($overlap === true) {
 		alert("중복확인 바랍니다.");
 	} else {
 		// 이름 입력
@@ -82,7 +88,7 @@ $joinBTN.addEventListener('click', (e) => {
 						if ($birthday.value.length > 6) {
 							alert('생년월일 자릿수를 확인하여 주십시오.');
 						} else {
-							document.getElementById('join-form').submit();
+							document.getElementById('loginForm').submit();
 						}
 					}
 				}

@@ -72,7 +72,6 @@ public class PayServiceImpl implements PayService {
 		ReadyResponse readyResponse = response.getBody();
 
 		// 주문번호와 TID를 매핑해서 저장해놓는다.
-		// Mapping TID with partner_order_id then save it to use for approval request.
 		this.tid = readyResponse.getTid();
 		return readyResponse;
 	}
