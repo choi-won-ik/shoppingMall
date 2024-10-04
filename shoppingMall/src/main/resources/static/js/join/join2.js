@@ -91,7 +91,6 @@ $joinBTN.addEventListener('click', (e) => {
 	}
 });
 
-
 // 회원가입 취소
 const $cancel = document.getElementById('join-cancel');
 
